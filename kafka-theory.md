@@ -1273,7 +1273,8 @@ One-liner: commit = durable progress marker (resume position) stored in `__consu
 ---
 
 ## What Happens to Messages After Retention Time?
-![Kafka retention configuration](images/kafka-retention-configuration-hierarchy-1.png)
+![Kafka retention configuration](images/kafka-retention-configuration-hierarchy%20%281%29.png)
+![Kafka time-index configuration](images/2021-12-17-timeindex.png)
 Short answer: Kafka deletes data by removing entire log segments when retention conditions are met; this is independent of consumer offsets.
 
 1) What is retention?
@@ -1312,6 +1313,8 @@ One-liner (retention): Kafka removes old data by deleting log segments according
 ---
 
 ## Handling Duplicates in Consumers
+
+![Kafka time-index configuration](images\messageSemantics.png)
 
 Short answer: duplicates are expected under Kafka’s default at-least-once delivery; consumers must be implemented idempotently or use DB constraints/transactions.
 
